@@ -15,10 +15,13 @@ import {
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { WithPendoModal } from 'rn-pendo-sdk';
 
 import { CATEGORY_META } from '@/constants/categories';
 import { useColors } from '@/hooks/useColors';
 import { ScreenshotCard } from '@/types';
+
+const PendoModal = WithPendoModal(Modal);
 
 interface Props {
   card: ScreenshotCard | null;
@@ -129,7 +132,7 @@ export function DetailSheet({ card, visible, onClose }: Props) {
     date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
 
   return (
-    <Modal
+    <PendoModal
       visible={visible}
       transparent
       animationType="none"
@@ -312,7 +315,7 @@ export function DetailSheet({ card, visible, onClose }: Props) {
           </View>
         </ScrollView>
       </Animated.View>
-    </Modal>
+    </PendoModal>
   );
 }
 
