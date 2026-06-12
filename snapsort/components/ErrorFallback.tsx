@@ -11,8 +11,11 @@ import {
   View,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { WithPendoModal } from "rn-pendo-sdk";
 
 import { useColors } from "@/hooks/useColors";
+
+const PendoModal = WithPendoModal(Modal);
 
 export type ErrorFallbackProps = {
   error: Error;
@@ -100,7 +103,7 @@ export function ErrorFallback({ error, resetError }: ErrorFallbackProps) {
       </View>
 
       {__DEV__ ? (
-        <Modal
+        <PendoModal
           visible={isModalVisible}
           animationType="slide"
           transparent={true}
@@ -165,7 +168,7 @@ export function ErrorFallback({ error, resetError }: ErrorFallbackProps) {
               </ScrollView>
             </View>
           </View>
-        </Modal>
+        </PendoModal>
       ) : null}
     </View>
   );

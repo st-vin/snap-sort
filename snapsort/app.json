@@ -40,6 +40,13 @@
         {
           "photosPermission": "SnapSort needs access to your photo library to import screenshots."
         }
+      ],
+      [
+        "rn-pendo-sdk",
+        {
+          "ios-scheme": "",
+          "android-scheme": ""
+        }
       ]
     ],
     "experiments": {
